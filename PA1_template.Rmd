@@ -56,7 +56,8 @@ plot(dataByInterval[,1], dataByInterval[,2],type="l",xlab="Interval",ylab="Avera
 
 ####What interval has the highest average activity over all days?
 ```{r}
-sqldf("select max(steps) as 'Peak Average Steps' from dataByInterval")
+maxSteps<-sqldf("select interval,max(steps) as 'Peak Average Steps' from dataByInterval")
+print(maxSteps[1])
 ```
 ## Imputing missing values
 How many missing values are there? 

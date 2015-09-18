@@ -109,9 +109,10 @@ plot(dataByInterval[,1], dataByInterval[,2],type=&quot;l&quot;,xlab=&quot;Interv
 </div>
 <div id="what-interval-has-the-highest-average-activity-over-all-days" class="section level4">
 <h4>What interval has the highest average activity over all days?</h4>
-<pre class="r"><code>sqldf(&quot;select max(steps) as 'Peak Average Steps' from dataByInterval&quot;)</code></pre>
-<pre><code>##   Peak Average Steps
-## 1                206</code></pre>
+<pre class="r"><code>maxSteps&lt;-sqldf(&quot;select interval,max(steps) as 'Peak Average Steps' from dataByInterval&quot;)
+print(maxSteps[1])</code></pre>
+<pre><code>##   interval
+## 1      835</code></pre>
 </div>
 </div>
 <div id="imputing-missing-values" class="section level2">
